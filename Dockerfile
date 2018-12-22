@@ -12,4 +12,4 @@ RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/${KUBECTL
 ARG AWS_CLI_VERSION=1.16.75
 
 # Install awscli
-RUN pip install "awscli>=${AWS_CLI_VERSION}" --force --user
+RUN pip install "awscli>=${AWS_CLI_VERSION}" --force
