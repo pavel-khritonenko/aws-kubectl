@@ -1,5 +1,5 @@
 FROM python:alpine
-RUN apk --no-cache add curl
+RUN apk --no-cache add curl bash
 
 ARG KUBECTL_VERSION=v1.10.2
 
