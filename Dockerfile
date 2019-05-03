@@ -1,7 +1,8 @@
 FROM python:alpine
-RUN apk --no-cache add curl bash
+RUN apk --no-cache add curl bash alpine-sdk go
+RUN go get github.com/subfuzion/envtpl/...
 
-ARG KUBECTL_VERSION=v1.10.2
+ARG KUBECTL_VERSION=v1.13.4
 
 # Install kubectl
 
@@ -9,7 +10,7 @@ RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/${KUBECTL
     && mv kubectl /usr/local/bin \
     && chmod +x /usr/local/bin/kubectl
 
-ARG AWS_CLI_VERSION=1.16.75
+ARG AWS_CLI_VERSION=1.16.152
 
 # Install awscli
 RUN pip install "awscli>=${AWS_CLI_VERSION}" --force
