@@ -1,5 +1,11 @@
 FROM python:alpine
-RUN apk --no-cache add curl bash alpine-sdk go
+RUN apk --no-cache add curl bash git make musl-dev go
+
+ENV GOROOT /usr/lib/go
+ENV GOPATH /go
+ENV PATH /go/bin:$PATH
+RUN mkdir -p ${GOPATH}/src ${GOPATH}/bin
+
 RUN go get github.com/subfuzion/envtpl/...
 
 ARG KUBECTL_VERSION=v1.13.4
