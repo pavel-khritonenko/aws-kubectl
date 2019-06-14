@@ -8,7 +8,7 @@ RUN mkdir -p ${GOPATH}/src ${GOPATH}/bin
 
 RUN go get github.com/subfuzion/envtpl/...
 
-ARG KUBECTL_VERSION=v1.13.4
+ARG KUBECTL_VERSION=v1.14.2
 
 # Install kubectl
 
@@ -16,7 +16,7 @@ RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/${KUBECTL
     && mv kubectl /usr/local/bin \
     && chmod +x /usr/local/bin/kubectl
 
-ARG AWS_CLI_VERSION=1.16.152
+ARG AWS_CLI_VERSION=1.16.179
 
 # Install awscli
 RUN pip install "awscli>=${AWS_CLI_VERSION}" --force
