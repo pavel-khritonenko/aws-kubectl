@@ -1,5 +1,5 @@
 FROM python:alpine
-RUN apk --no-cache add curl bash git make musl-dev go
+RUN apk --no-cache add curl bash git make musl-dev go docker
 
 ENV GOROOT /usr/lib/go
 ENV GOPATH /go
